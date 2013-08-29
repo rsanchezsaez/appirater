@@ -540,6 +540,8 @@ static BOOL _alwaysUseMainBundle = NO;
 //Delegate call from the StoreKit view.
 - (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
 	[Appirater closeModal];
+    // Make sure status bar is hidden, viewing screenshots on the in-app rating view unhides the status bar.
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
 
 //Close the in-app rating (StoreKit) view and restore the previous status bar style.
